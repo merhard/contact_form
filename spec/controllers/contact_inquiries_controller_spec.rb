@@ -24,7 +24,13 @@ describe ContactInquiriesController do
   # ContactInquiry. As you add validations to ContactInquiry, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "email" => "MyString" }
+    {
+      "email" => "MyString",
+      "first_name" => "string",
+      "last_name" => "string",
+      "subject" => "string",
+      "description" => "text"
+       }
   end
 
   # This should return the minimal set of values that should be in the session
