@@ -28,4 +28,12 @@ describe ContactInquiry do
     expect(inquiry).to_not be_valid
   end
 
+
+
+
+  it 'stores created contact inquiries' do
+    3.times {FactoryGirl.create(:contact_inquiry)}
+    expect(ContactInquiry.all.count).to eq(3)
+  end
+
 end
