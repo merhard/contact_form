@@ -36,4 +36,12 @@ describe ContactInquiry do
     expect(ContactInquiry.all.count).to eq(3)
   end
 
+
+  it 'removes destroyed contact inquiries' do
+    FactoryGirl.create(:contact_inquiry)
+    previous_count = ContactInquiry.count
+    ContactInquiry.last.destroy
+    expect(ContactInquiry.count).to eq(previous_count-1)
+  end
+
 end

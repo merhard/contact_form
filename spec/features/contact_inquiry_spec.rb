@@ -40,6 +40,16 @@ describe 'Contact Inquiry browsing' do
     expect(page).to have_content(inquiry2.subject)
     expect(page).to have_content(inquiry3.subject)
   end
+end
+
+
+describe 'Contact Inquiry deleting' do
+  it 'can remove items from the list' do
+    inquiry = FactoryGirl.create(:contact_inquiry)
+    visit '/contact_inquiries'
+    click_on 'Destroy'
+    expect(page).to_not have_content(inquiry.subject)
+  end
 
 
 
