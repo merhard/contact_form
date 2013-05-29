@@ -1,0 +1,31 @@
+<h1>Listing contact_inquiries</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Subject</th>
+    <th>Description</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contact_inquiries.each do |contact_inquiry| %>
+  <tr>
+    <td><%= contact_inquiry.email %></td>
+    <td><%= contact_inquiry.subject %></td>
+    <td><%= contact_inquiry.description %></td>
+    <td><%= contact_inquiry.first_name %></td>
+    <td><%= contact_inquiry.last_name %></td>
+    <td><%= link_to 'Show', contact_inquiry %></td>
+    <td><%= link_to 'Edit', edit_contact_inquiry_path(contact_inquiry) %></td>
+    <td><%= link_to 'Destroy', contact_inquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact inquiry', new_contact_inquiry_path %>
